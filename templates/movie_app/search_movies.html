@@ -2,20 +2,77 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
+        <meta name="description" content="Website provide user to search movies.">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Search Movies</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'styles.css' %}"/ type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
     </head>
+
     <body>
-        <div class="container">
-            <form method="POST">
-                {{ form.as_p }}
-                {% csrf_token %}
-                Type movie title: <input type="submit" value="Submit">
-            </form>
-        </div>
-        <p>{{ insert_title }}</p>
-        <p>{{ insert_director }}</p>
-        <p>{{ insert_genre }}</p>
-        <p>{{ insert_release }}</p>
-        <p>{{ insert_plot }}</p>
+        <section class="hero is-dark">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">
+                        Search your favourite movies
+                    </h1>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-offset-4 is-4">
+                        <form method="POST">
+                            <div class="field has-addons">
+                                <div class="control is-expanded">
+                                    {% csrf_token %}
+                                    {{ form.as_p }}
+                                </div>
+                                <div class="control">
+                                    <button class="button is-active">
+                                        Search
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-offset-3 is-6">
+                        <div class="box">
+                            <article class="media">
+                                <div class="media-left">
+                                    <figure class="image is-50x50">
+                                        <img src="{{ insert_poster }}" alt="Image">
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    <div class="content">
+                                        <p>
+                                            <span class="title">{{ insert_title }}</span>
+                                            <br>
+                                            <span class="subtitle">{{ insert_director }}</span>
+                                            <br> {{ insert_genre }}
+                                            <br> {{ insert_release }}
+                                            <br> {{ insert_plot }}
+                                        </p>
+                                    </div>
+                                    <button class="button is-active">
+                                        Favourite
+                                    </button>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </body>
 </html>
