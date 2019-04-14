@@ -5,6 +5,17 @@
         <title>Search Movies</title>
     </head>
     <body>
-        <h3>{{ insert_movie }}</h3>
+        <div class="container">
+            <form method="POST">
+                {{ form.as_p }}
+                {% csrf_token %}
+                Type movie title: <input type="submit" value="Submit">
+            </form>
+        </div>
+        <p>{{ insert_title }}</p>
+        <p>{{ insert_director }}</p>
+        <p>{{ insert_genre }}</p>
+        <p>{{ insert_release }}</p>
+        <p>{{ insert_plot }}</p>
     </body>
 </html>
