@@ -12,7 +12,7 @@ def movie_details(request):
     form = forms.FormMovie()
     default_dict = {
             'form': form,
-            'insert_poster': 'static/search_icon.png'
+            'insert_poster': '/static/search_icon.png'
     }
     if request.method == 'POST':
         form = forms.FormMovie(request.POST)
