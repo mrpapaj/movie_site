@@ -1,14 +1,18 @@
 {% extends 'movie_app/base.html' %}
 
 {% block content %}
-<h2>
-    Sign up
-</h2>
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">
+    {% if user.is_authenticated %}
+    Please log out first.
+    {% else %}
+    <h2>
         Sign up
-    </button>
-</form>
+    </h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">
+            Sign up
+        </button>
+    </form>
+    {% endif %}
 {% endblock content %}
