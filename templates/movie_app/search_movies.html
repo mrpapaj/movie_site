@@ -24,6 +24,7 @@
         </div>
     </section>
     <section class="section">
+        {% if insert_response == "True" %}
         <div class="container">
             <div class="columns">
                 <div class="column is-offset-3 is-6">
@@ -51,6 +52,7 @@
                 </div>
             </div>
         </div>
+        {% endif %}
     </section>
     {% else %}
     <p>You are not loggen in.</p>

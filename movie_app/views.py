@@ -26,6 +26,7 @@ def movie_details(request):
                         'insert_poster': data['Poster'],
                         'insert_runtime': 'Time: ' + data['Runtime'],
                         'insert_release': 'Release date: ' + data['Released'],
+                        'insert_response': 'True',
                 }
                 return render(request, 'movie_app/search_movies.html', context=movie_info)
-    return render(request, 'movie_app/search_movies.html', context={'form': form})
+    return render(request, 'movie_app/search_movies.html', context={'form': form, 'insert_response': 'False'})
