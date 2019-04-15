@@ -1,6 +1,7 @@
 {% extends 'movie_app/base.html' %}
 
 {% block content %}
+    {% if user.is_authenticated %}
     <section class="section" id="section_search">
         <div class="container">
             <div class="columns">
@@ -30,7 +31,7 @@
                         <article class="media">
                             <div class="media-left">
                                 <figure class="image is-50x50">
-                                    <img src="{{ insert_poster }}" alt="Image">
+                                    <img src="{{ insert_poster }}" onerror="this.style.display='none'">
                                 </figure>
                             </div>
                             <div class="media-content">
@@ -44,9 +45,6 @@
                                         <br> {{ insert_plot }}
                                     </p>
                                 </div>
-                                <button class="button is-active">
-                                    Favourite
-                                </button>
                             </div>
                         </article>
                     </div>
@@ -54,4 +52,7 @@
             </div>
         </div>
     </section>
+    {% else %}
+    <p>You are not loggen in.</p>
+    {% endif %}
 {% endblock %}

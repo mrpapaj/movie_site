@@ -10,10 +10,6 @@ def index(request):
 
 def movie_details(request):
     form = forms.FormMovie()
-    default_dict = {
-            'form': form,
-            'insert_poster': '/static/search_icon.png'
-    }
     if request.method == 'POST':
         form = forms.FormMovie(request.POST)
         if form.is_valid():
@@ -32,4 +28,4 @@ def movie_details(request):
                         'insert_release': 'Release date: ' + data['Released'],
                 }
                 return render(request, 'movie_app/search_movies.html', context=movie_info)
-    return render(request, 'movie_app/search_movies.html', context=default_dict)
+    return render(request, 'movie_app/search_movies.html', context={'form': form})
