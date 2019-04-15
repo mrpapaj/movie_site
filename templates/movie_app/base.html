@@ -17,6 +17,13 @@
                     <h1 class="title">
                         Search your favourite movies
                     </h1>
+                    {% if user.is_authenticated %}
+                    <p>
+                        <a href="{% url 'logout' %}"</p>
+                            Log out
+                        </a>
+                    </p>
+                    {% endif %}
                 </div>
             </div>
         </section>
