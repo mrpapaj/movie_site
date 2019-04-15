@@ -20,58 +20,9 @@
                 </div>
             </div>
         </section>
-        <section class="section" id="section_search">
-            <div class="container">
-                <div class="columns">
-                    <div class="column is-offset-4 is-4">
-                        <form method="POST">
-                            <div class="field has-addons">
-                                <div class="control is-expanded">
-                                    {% csrf_token %}
-                                    {{ form.as_p }}
-                                </div>
-                                <div class="control">
-                                    <button class="button is-active">
-                                        Search
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="section">
-            <div class="container">
-                <div class="columns">
-                    <div class="column is-offset-3 is-6">
-                        <div class="box">
-                            <article class="media">
-                                <div class="media-left">
-                                    <figure class="image is-50x50">
-                                        <img src="{{ insert_poster }}" alt="Image">
-                                    </figure>
-                                </div>
-                                <div class="media-content">
-                                    <div class="content">
-                                        <p>
-                                            <span class="title">{{ insert_title }}</span>
-                                            <br>
-                                            <span class="subtitle">{{ insert_director }}</span>
-                                            <br> {{ insert_genre }}
-                                            <br> {{ insert_release }}
-                                            <br> {{ insert_plot }}
-                                        </p>
-                                    </div>
-                                    <button class="button is-active">
-                                        Favourite
-                                    </button>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        {% block content %}
+        {% endblock %}
+        <footer class="footer">
+        </footer>
     </body>
 </html>

@@ -31,5 +31,5 @@ def movie_details(request):
                         'insert_runtime': 'Time: ' + data['Runtime'],
                         'insert_release': 'Release date: ' + data['Released'],
                 }
-                return render(request, 'movie_app/base.html', context=movie_info)
-    return render(request, 'movie_app/base.html', context=default_dict)
+                return render(request, 'movie_app/search_movies.html', context=movie_info)
+    return render(request, 'movie_app/search_movies.html', context=default_dict)

@@ -19,5 +19,6 @@ from movie_app import views
 
 urlpatterns = [
     path('', include('movie_app.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
 ]
