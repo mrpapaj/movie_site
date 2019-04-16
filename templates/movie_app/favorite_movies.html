@@ -5,7 +5,17 @@
     <p>
         {{ insert_favorites }}
     </p>
+    <p>
+        <a href="{% url 'search_movies' %}">
+            Back to search panel
+        </a>
+    </p>
     {% else %}
     <p>You are not loggen in.</p>
+    <p>
+        <a href="{% url 'login' %}">
+            Log in
+        </a>
+    </p>
     {% endif %}
 {% endblock %}

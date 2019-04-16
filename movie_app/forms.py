@@ -9,4 +9,4 @@ class FormMovie(forms.Form):
 class FormFavorite(forms.ModelForm):
     class Meta:
         model = Favorite
-        fields = ['title', 'user']
+        fields = ['title']

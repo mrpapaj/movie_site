@@ -8,7 +8,7 @@
                 <div class="column is-offset-4 is-4">
                     <form method="POST">
                         <div class="field has-addons">
-                            <div class="control is-expanded">
+                            <div class="control is-expanded" style="width: 20px;">
                                 {% csrf_token %}
                                 {{ form.as_p }}
                             </div>
@@ -16,8 +16,8 @@
                                 <button class="button is-active" type="submit" name="btnSearch">
                                     Search
                                 </button>
-                                <button class="button is-active" type="submit" name="btnAdd">
-                                    Add to favorites
+                                <button class="button is-active" type="submit" name="btnAdd" style="margin-left: -6px;">
+                                    Add movie
                                 </button>
                             </div>
                         </div>
@@ -59,5 +59,10 @@
     </section>
     {% else %}
     <p>You are not loggen in.</p>
+    <p>
+        <a href="{% url 'login' %}">
+            Log in
+        </a>
+    </p>
     {% endif %}
 {% endblock %}

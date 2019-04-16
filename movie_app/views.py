@@ -30,9 +30,10 @@ def movie_details(request):
                     return render(request, 'movie_app/search_movies.html', context=movie_info)
 
         elif 'btnAdd' in request.POST:
-            form = FormFavorite(request.POST)
-            if form.is_valid():
-                form.save()
+            formFav = FormFavorite(request.POST)
+            formFav.instance.user = request.user
+            if formFav.is_valid():
+                formFav.save()
                 return render(request, 'movie_app/search_movies.html', context={'form': form})
 
     return render(request, 'movie_app/search_movies.html', context={'form': form, 'insert_response': 'False'})

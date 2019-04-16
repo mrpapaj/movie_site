@@ -9,13 +9,14 @@
         {% load static %}
         <link rel="stylesheet" href="{% static 'styles.css' %}" type="text/css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
+        <link rel="shortcut icon" href="{% static 'movie.ico' %}"/>
     </head>
     <body>
         <section class="hero is-dark">
             <div class="hero-body">
                 <div class="container">
                     <h1 class="title">
-                        Search your favourite movies
+                        Search your favorite movies
                     </h1>
                     {% if user.is_authenticated %}
                     <p>
