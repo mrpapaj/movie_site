@@ -26,6 +26,11 @@
                     <p>
                         {{ user.username }}
                     </p>
+                    <p>
+                        <a href="{% url 'favorite_movies' %}">
+                            Favorite movies
+                        </a>
+                    </p>
                     {% endif %}
                 </div>
             </div>

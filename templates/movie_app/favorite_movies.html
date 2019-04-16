@@ -1,0 +1,11 @@
+{% extends 'movie_app/base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+    <p>
+        {{ insert_favorites }}
+    </p>
+    {% else %}
+    <p>You are not loggen in.</p>
+    {% endif %}
+{% endblock %}
