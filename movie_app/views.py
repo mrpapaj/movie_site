@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from . import forms
 from .forms import FormFavorite
+from .models import Favorite
 import requests
 
 
@@ -40,5 +41,6 @@ def movie_details(request):
 
 
 def fav_movies(request):
-    my_movies = {'insert_favorites': 'Your favorite movies.'}
-    return render(request, 'movie_app/favorite_movies.html', context=my_movies)
+    my_movies = Favorite.objects.filter(user=request.user.id)
+    print(request.user)
+    return render(request, 'movie_app/favorite_movies.html', context={'insert_movies': my_movies})

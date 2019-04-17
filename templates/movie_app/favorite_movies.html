@@ -2,9 +2,18 @@
 
 {% block content %}
     {% if user.is_authenticated %}
-    <p>
-        {{ insert_favorites }}
-    </p>
+    <div style="margin-left: 50px;">
+        <p>
+            Your favorite movies:
+        </p>
+        <p>
+            {% for each_movie in insert_movies %}
+            <li>
+                {{ each_movie }}
+            </li>
+            {% endfor %}
+        </p>
+    </div>
     <p>
         <a href="{% url 'search_movies' %}">
             Back to search panel
